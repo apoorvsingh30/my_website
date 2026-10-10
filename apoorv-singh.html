@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apoorv Singh</title>
+<meta name="description" content="Apoorv Singh is a product and tech builder in Bengaluru with 6+ years of experience shipping B2B software.">
+<style>
+/* Layout: Apple product-page rhythm. Frosted sticky nav, big centered hero, stat strip, bento highlights, stacked experience cards, quiet footer. */
+:root {
+  --bg: #fbfbfd;
+  --surface: #ffffff;
+  --band: #f5f5f7;
+  --fg: #1d1d1f;
+  --muted: #6e6e73;
+  --line: rgba(0,0,0,0.1);
+  --accent: #0071e3;
+  --accent-fg: #ffffff;
+  --grad-a: #0071e3;
+  --grad-b: #b04cf0;
+  --nav-bg: rgba(251,251,253,0.78);
+  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --gutter: clamp(16px, 5vw, 40px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000;
+    --surface: #1d1d1f;
+    --band: #0b0b0c;
+    --fg: #f5f5f7;
+    --muted: #a1a1a6;
+    --line: rgba(255,255,255,0.14);
+    --accent: #2997ff;
+    --accent-fg: #000000;
+    --grad-a: #2997ff;
+    --grad-b: #c77dff;
+    --nav-bg: rgba(0,0,0,0.72);
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #000000;
+  --surface: #1d1d1f;
+  --band: #0b0b0c;
+  --fg: #f5f5f7;
+  --muted: #a1a1a6;
+  --line: rgba(255,255,255,0.14);
+  --accent: #2997ff;
+  --accent-fg: #000000;
+  --grad-a: #2997ff;
+  --grad-b: #c77dff;
+  --nav-bg: rgba(0,0,0,0.72);
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  padding-inline: 0;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { text-wrap: balance; }
+
+.wrap { width: 100%; max-width: 1080px; margin-inline: auto; padding-inline: var(--gutter); }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 52px; gap: 16px; }
+.brand { color: var(--fg); font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
+.brand:hover { text-decoration: none; }
+.nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.nav ul a { color: var(--muted); font-size: 13px; letter-spacing: 0; }
+.nav ul a:hover { color: var(--fg); text-decoration: none; }
+.pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent); color: var(--accent-fg);
+  padding: 8px 18px; border-radius: 980px; font-size: 14px; font-weight: 500;
+  border: 0; cursor: pointer; letter-spacing: -0.01em;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.pill:hover { text-decoration: none; opacity: .88; }
+.pill:active { transform: scale(.97); }
+.pill.small { padding: 5px 14px; font-size: 12px; }
+.pill.ghost { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+
+/* Hero */
+.hero { text-align: center; padding-block: clamp(64px, 12vw, 128px) clamp(48px, 8vw, 80px); }
+.hero .wrap > * { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+.hero .wrap > *:nth-child(2) { animation-delay: .08s; }
+.hero .wrap > *:nth-child(3) { animation-delay: .16s; }
+.hero .wrap > *:nth-child(4) { animation-delay: .24s; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.eyebrow { font-size: 14px; font-weight: 600; color: var(--muted); letter-spacing: 0.01em; margin-bottom: 14px; }
+.hero h1 {
+  font-size: clamp(44px, 10vw, 96px);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+.grad {
+  background: linear-gradient(100deg, var(--grad-a), var(--grad-b));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.hero .tag {
+  margin: 20px auto 0; max-width: 20ch;
+  font-size: clamp(24px, 4.4vw, 40px); line-height: 1.12; font-weight: 600; letter-spacing: -0.03em;
+}
+.hero .lede { margin: 20px auto 0; max-width: 40ch; color: var(--muted); font-size: clamp(17px, 2.2vw, 21px); line-height: 1.4; }
+.cta { margin-top: 32px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.cta .pill { padding: 12px 24px; font-size: 17px; }
+
+/* Stats */
+.stats { padding-block: 0 clamp(56px, 9vw, 96px); }
+.stat-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: var(--band); border-radius: 28px; padding: 8px;
+}
+.stat { padding: 28px 20px; text-align: center; min-width: 0; }
+.stat + .stat { border-left: 1px solid var(--line); }
+.stat b { display: block; font-size: clamp(34px, 5vw, 52px); font-weight: 700; letter-spacing: -0.04em; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.stat span { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.35; }
+
+/* Sections */
+section { padding-block: clamp(56px, 9vw, 104px); }
+.band { background: var(--band); }
+.kicker { font-size: 14px; font-weight: 600; color: var(--accent); margin-bottom: 10px; }
+.h2 { font-size: clamp(32px, 5.6vw, 56px); line-height: 1.05; font-weight: 700; letter-spacing: -0.035em; max-width: 18ch; }
+.sub { margin-top: 18px; color: var(--muted); font-size: clamp(17px, 2vw, 21px); line-height: 1.4; max-width: 52ch; }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+.about-grid > * { min-width: 0; }
+.about p + p { margin-top: 16px; }
+.about .copy { font-size: 19px; line-height: 1.5; }
+.facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.facts div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; text-align: right; font-weight: 500; }
+.facts { margin: 0; }
+
+/* Bento */
+.bento { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.card {
+  background: var(--surface); border-radius: 28px; padding: clamp(24px, 3vw, 36px);
+  display: flex; flex-direction: column; gap: 10px; min-width: 0;
+  box-shadow: var(--shadow);
+  transition: transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.card:hover { transform: translateY(-4px); }
+.card.wide { grid-column: span 2; }
+.card .label { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; text-transform: uppercase; }
+.card h3 { font-size: clamp(22px, 2.6vw, 28px); line-height: 1.12; font-weight: 700; letter-spacing: -0.03em; }
+.card p { color: var(--muted); font-size: 16px; line-height: 1.45; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 12px; }
+.chip { font-size: 13px; padding: 5px 12px; border-radius: 980px; background: var(--band); color: var(--fg); }
+.card.dark { background: #1d1d1f; color: #f5f5f7; }
+.card.dark p, .card.dark .label { color: #a1a1a6; }
+.card.dark .chip { background: rgba(255,255,255,0.1); color: #f5f5f7; }
+:root[data-theme="dark"] .card.dark, :root:not([data-theme="light"]) .card.dark { }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .card.dark { background: #2a2a2d; } }
+:root[data-theme="dark"] .card.dark { background: #2a2a2d; }
+
+/* Experience */
+.jobs { margin-top: 48px; display: grid; gap: 16px; }
+.job {
+  background: var(--surface); border-radius: 28px; padding: clamp(24px, 4vw, 44px);
+  display: grid; grid-template-columns: 240px 1fr; gap: clamp(20px, 4vw, 56px);
+  box-shadow: var(--shadow);
+}
+.job > * { min-width: 0; }
+.job .when { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+.job .where { font-size: 24px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-top: 6px; }
+.job .role { color: var(--fg); font-weight: 500; margin-top: 4px; font-size: 16px; }
+.job .place { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.job .intro { font-size: 17px; line-height: 1.5; }
+.job ul { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.job li { position: relative; padding-left: 20px; color: var(--muted); font-size: 16px; line-height: 1.5; }
+.job li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.job li strong { color: var(--fg); font-weight: 600; }
+
+/* Skills */
+.skill-grid { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.skill { background: var(--surface); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); min-width: 0; }
+.skill h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; }
+.skill .chips { padding-top: 0; margin-top: 0; }
+
+/* Learning */
+.learn { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); }
+.learn > * { min-width: 0; }
+.learn h3 { font-size: 15px; font-weight: 600; color: var(--muted); margin-bottom: 8px; letter-spacing: 0.01em; }
+.list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.list li { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.list b { display: block; font-size: 18px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.3; }
+.list span { display: block; color: var(--muted); font-size: 15px; margin-top: 2px; }
+
+/* Contact */
+.contact { text-align: center; }
+.contact .h2 { margin-inline: auto; }
+.contact .sub { margin-inline: auto; }
+.contact-list { margin: 40px auto 0; max-width: 520px; display: grid; gap: 0; text-align: left; border-top: 1px solid var(--line); }
+.contact-list a, .contact-list div { display: flex; justify-content: space-between; gap: 16px; padding: 18px 4px; border-bottom: 1px solid var(--line); color: var(--fg); font-size: 18px; align-items: baseline; }
+.contact-list a:hover { text-decoration: none; color: var(--accent); }
+.contact-list small { color: var(--muted); font-size: 14px; flex: none; }
+.contact-list .val { min-width: 0; overflow-wrap: anywhere; text-align: right; font-weight: 500; }
+
+footer { padding-block: 32px 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 880px) {
+  .nav ul { display: none; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .stat:nth-child(3) { border-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .about-grid, .learn { grid-template-columns: 1fr; }
+  .bento, .skill-grid { grid-template-columns: 1fr; }
+  .card.wide { grid-column: auto; }
+  .job { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 420px) {
+  .stat { padding: 22px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero .wrap > * { animation: none; }
+  .card { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Apoorv Singh</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Highlights</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#learning">Education</a></li>
+    </ul>
+    <a class="pill small" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Product &amp; Tech Builder · Bengaluru, India</p>
+      <h1>Apoorv <span class="grad">Singh</span></h1>
+      <p class="tag">Turning ideas into platforms that scale.</p>
+      <p class="lede">I have spent 6+ years building software for real businesses. I decide what to build, then I build it and keep it running.</p>
+      <div class="cta">
+        <a class="pill" href="#contact">Get in touch</a>
+        <a class="pill ghost" href="#experience">See my work</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat-grid">
+        <div class="stat"><b>6+</b><span>Years building products</span></div>
+        <div class="stat"><b>50+</b><span>Live apps moved with zero loss</span></div>
+        <div class="stat"><b>100s</b><span>Of users on a product I launched</span></div>
+        <div class="stat"><b>2</b><span>Live SaaS platforms I own today</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="kicker">About</p>
+        <h2 class="h2">Product thinking. Engineering hands.</h2>
+        <div class="copy" style="margin-top:24px">
+          <p>I work across the whole path from idea to a running product. I talk to users and stakeholders, choose what to build next, design the system and ship it.</p>
+          <p>My work covers real estate, finance and education software. Lately I have been building the backend too: a secure API on Python and FastAPI that my own products run on. I use Claude AI to move faster and to write clear documentation.</p>
+        </div>
+      </div>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Bengaluru, India</dd></div>
+        <div><dt>Focus</dt><dd>Products, APIs, automation</dd></div>
+        <div><dt>Main stack</dt><dd>Bubble · Python · FastAPI</dd></div>
+        <div><dt>Industries</dt><dd>Real estate, fintech, ed-tech</dd></div>
+        <div><dt>Studying</dt><dd>MBA in Data Science</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="work" class="band">
+    <div class="wrap">
+      <p class="kicker">Highlights</p>
+      <h2 class="h2">Things I am proud of shipping.</h2>
+      <p class="sub">A few results from the last few years, in plain terms.</p>
+
+      <div class="bento">
+        <article class="card wide dark">
+          <span class="label">Backend</span>
+          <h3>A production API, designed and built on my own.</h3>
+          <p>Sign-in, rate limits that change by customer plan, and caching to keep it fast. I took it from a blank page to live.</p>
+          <div class="chips"><span class="chip">FastAPI</span><span class="chip">Supabase</span><span class="chip">Render</span><span class="chip">REST</span></div>
+        </article>
+
+        <article class="card">
+          <span class="label">Ownership</span>
+          <h3>Two live SaaS products.</h3>
+          <p>I own the roadmap for Capital Stack and Developer Database, and decide what ships next from stakeholder input and usage data.</p>
+        </article>
+
+        <article class="card">
+          <span class="label">Migration</span>
+          <h3>50+ apps moved. None lost.</h3>
+          <p>I led the move from Kissflow to Zoho Qntrl, and worked with the Zoho team to fix bugs in their new product along the way.</p>
+        </article>
+
+        <article class="card">
+          <span class="label">Launch</span>
+          <h3>Hundreds of users, fast.</h3>
+          <p>Built Tax Finanshels, a UAE VAT tax-filing product, in under six months. Hundreds of people used it within the first few months.</p>
+        </article>
+
+        <article class="card">
+          <span class="label">Security</span>
+          <h3>Safe by default.</h3>
+          <p>IP blocklisting and input cleaning protect customer data and keep the platform stable.</p>
+        </article>
+
+        <article class="card wide">
+          <span class="label">Integrations</span>
+          <h3>Fits into the tools people already use.</h3>
+          <p>Customers can sync platform data into HubSpot and Attio. Teams get real-time updates in Slack. I also built a usage dashboard that shows what people actually use, so priorities come from data.</p>
+          <div class="chips"><span class="chip">HubSpot</span><span class="chip">Attio</span><span class="chip">Slack</span><span class="chip">Xero</span><span class="chip">Stripe</span><span class="chip">Mixpanel</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <p class="kicker">Experience</p>
+      <h2 class="h2">Six years, five teams.</h2>
+
+      <div class="jobs">
+
+        <article class="job">
+          <div>
+            <p class="when">Feb 2024 – Aug 2026</p>
+            <h3 class="where">Thesis Driven</h3>
+            <p class="role">Bubble Developer</p>
+            <p class="place">United States · Remote</p>
+          </div>
+          <div>
+            <p class="intro">I joined to own two SaaS platforms for real estate investment data. The role grew into building the backend behind them, from deciding what customers need to shipping a secure API.</p>
+            <ul>
+              <li><strong>Roadmap.</strong> Owned what gets built next for Capital Stack and Developer Database, using stakeholder input and usage data.</li>
+              <li><strong>API.</strong> Designed, built and deployed a production REST API on FastAPI, Supabase and Render, with sign-in, tiered rate limits and caching.</li>
+              <li><strong>Security.</strong> Added IP blocklisting and input sanitization to protect customer data.</li>
+              <li><strong>Analytics.</strong> Built an internal usage dashboard to track adoption and guide priorities.</li>
+              <li><strong>Integrations.</strong> Connected HubSpot and Attio, and built Slack alerts for real-time updates.</li>
+              <li><strong>AI.</strong> Used Claude AI to speed up development and documentation.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div>
+            <p class="when">Aug 2023 – Feb 2024</p>
+            <h3 class="where">Finanshels</h3>
+            <p class="role">Bubble Developer</p>
+            <p class="place">Bengaluru, India</p>
+          </div>
+          <div>
+            <p class="intro">I built a tax-filing product for UAE clients from scratch and shipped it in under six months. It was my first time taking a regulated financial product from idea to launch.</p>
+            <ul>
+              <li><strong>Tax Finanshels.</strong> A UAE VAT filing product used by hundreds of people within months of release.</li>
+              <li><strong>Dashboard.</strong> A Xero-connected view of income, expenses, profit, receivables and invoices, with multi-company switching and a built-in team chatbot.</li>
+              <li><strong>Payments and email.</strong> Connected Stripe, Brevo and Calendly, and used Mixpanel to find and reduce drop-off.</li>
+              <li><strong>Automation.</strong> Automated client messages with Wati and REST APIs, cutting manual outreach for the operations team.</li>
+              <li><strong>Compliance.</strong> Worked with UAE tax experts to turn VAT rules into product features.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div>
+            <p class="when">Oct 2022 – Aug 2023</p>
+            <h3 class="where">Expertrons</h3>
+            <p class="role">Bubble Developer</p>
+            <p class="place">Mumbai, India</p>
+          </div>
+          <div>
+            <p class="intro">I built internal tools for a fast-growing ed-tech company. I turned messy manual processes into clean platforms that dozens of sales reps and channel partners used every day.</p>
+            <ul>
+              <li><strong>CRM and orders.</strong> Built full CRM and order management systems on Bubble.io for recruitment and sales.</li>
+              <li><strong>Dashboards.</strong> Real-time sales dashboards with role-based views for reps and team leads.</li>
+              <li><strong>Partners.</strong> Invoice handling and commission tracking for dozens of channel partners, with automated reports.</li>
+              <li><strong>Automation.</strong> Used REST APIs and MongoDB to remove large amounts of manual data entry.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div>
+            <p class="when">Oct 2020 – Aug 2022</p>
+            <h3 class="where">MyOperator</h3>
+            <p class="role">Automation Engineer</p>
+            <p class="place">India</p>
+          </div>
+          <div>
+            <p class="intro">This role shaped how I think about automation at scale. The big project was moving 50+ live workflow apps to a brand new platform without losing a single one.</p>
+            <ul>
+              <li><strong>Migration.</strong> Led the move of 50+ apps from Kissflow to Zoho Qntrl with zero loss, and worked with the Zoho team to fix new-product bugs.</li>
+              <li><strong>KPI dashboards.</strong> Built live views of agent activity, pipeline and operations for senior leaders and sales teams.</li>
+              <li><strong>Workflows.</strong> Linked Google Workspace, Zoho CRM and other APIs through Zapier, saving many hours each month.</li>
+              <li><strong>Internal tools.</strong> Built a sales panel on Bubble.io with Google Sign-In.</li>
+              <li><strong>Custom code.</strong> Wrote JavaScript inside Zoho Qntrl for processes it could not handle on its own.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div>
+            <p class="when">Jan 2020 – Oct 2020</p>
+            <h3 class="where">Nethues Technologies</h3>
+            <p class="role">Software Developer Trainee</p>
+            <p class="place">India</p>
+          </div>
+          <div>
+            <p class="intro">My first job. I learned what it takes to ship real software for real clients on a deadline, and picked up the team habits I still use.</p>
+            <ul>
+              <li><strong>Web apps.</strong> Built responsive sites for retail and service clients with HTML, CSS, Bootstrap, PHP and MySQL.</li>
+              <li><strong>E-commerce.</strong> Helped senior developers on Magento 2 and CMS projects across design, build and testing.</li>
+              <li><strong>Speed.</strong> Tuned database queries and server code to make pages load faster.</li>
+              <li><strong>Agile.</strong> Worked in daily standups, sprint planning and retrospectives.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div>
+            <p class="when">Jan 2019 – Jun 2019</p>
+            <h3 class="where">Maxgen Technologies</h3>
+            <p class="role">Intern, Junior Java Developer</p>
+          </div>
+          <div>
+            <p class="intro">Where it started: a six-month internship writing Java.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="band">
+    <div class="wrap">
+      <p class="kicker">Skills</p>
+      <h2 class="h2">The tools I reach for.</h2>
+
+      <div class="skill-grid">
+        <div class="skill">
+          <h3>Build</h3>
+          <div class="chips"><span class="chip">Bubble.io</span><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">REST APIs</span><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">Java</span><span class="chip">HTML &amp; CSS</span></div>
+        </div>
+        <div class="skill">
+          <h3>Data and hosting</h3>
+          <div class="chips"><span class="chip">Supabase</span><span class="chip">MongoDB</span><span class="chip">MySQL</span><span class="chip">Render</span><span class="chip">Mixpanel</span></div>
+        </div>
+        <div class="skill">
+          <h3>Automate and connect</h3>
+          <div class="chips"><span class="chip">Zapier</span><span class="chip">Zoho CRM</span><span class="chip">Zoho Qntrl</span><span class="chip">HubSpot</span><span class="chip">Attio</span><span class="chip">Clay</span><span class="chip">Slack</span><span class="chip">Wati</span></div>
+        </div>
+        <div class="skill">
+          <h3>Payments and comms</h3>
+          <div class="chips"><span class="chip">Stripe</span><span class="chip">Brevo</span><span class="chip">Calendly</span><span class="chip">Xero</span></div>
+        </div>
+        <div class="skill">
+          <h3>AI</h3>
+          <div class="chips"><span class="chip">Anthropic Claude</span><span class="chip">Generative AI</span><span class="chip">RPA</span></div>
+        </div>
+        <div class="skill">
+          <h3>Product</h3>
+          <div class="chips"><span class="chip">Roadmaps</span><span class="chip">Usage analytics</span><span class="chip">Stakeholder work</span><span class="chip">Agile</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="learning">
+    <div class="wrap">
+      <p class="kicker">Education</p>
+      <h2 class="h2">Always learning.</h2>
+
+      <div class="learn">
+        <div>
+          <h3>Degrees</h3>
+          <ul class="list">
+            <li><b>MBA, Data Science</b><span>Amity University Online · 2024 – 2026</span></li>
+            <li><b>Postgraduate Diploma, Data Science</b><span>NIELIT · 2021</span></li>
+            <li><b>B.Tech, Computer Science</b><span>Dr. A.P.J. Abdul Kalam Technical University · 2015 – 2019</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Certifications</h3>
+          <ul class="list">
+            <li><b>Generative AI Foundations</b><span>Certificate program</span></li>
+            <li><b>AI for Engineers</b><span>Certificate</span></li>
+            <li><b>Robotic Process Automation (RPA)</b><span>Certificate</span></li>
+            <li><b>TCS MasterCraft DataPlus</b><span>Certificate</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact band">
+    <div class="wrap">
+      <p class="kicker">Contact</p>
+      <h2 class="h2">Let us build something.</h2>
+      <p class="sub">I am happy to talk about products, platforms and automation. Write or call any time.</p>
+
+      <div class="contact-list">
+        <a href="mailto:apoorvsingh30@gmail.com"><small>Email</small><span class="val">apoorvsingh30@gmail.com</span></a>
+        <a href="tel:+918400137532"><small>Mobile</small><span class="val">8400137532</span></a>
+        <a href="https://www.linkedin.com/in/apoorvsingh30" target="_blank" rel="noopener"><small>LinkedIn</small><span class="val">linkedin.com/in/apoorvsingh30</span></a>
+        <div><small>Location</small><span class="val">Bengaluru, Karnataka, India</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Apoorv Singh</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+</body>
+</html>
