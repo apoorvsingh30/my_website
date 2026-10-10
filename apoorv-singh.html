@@ -4,247 +4,251 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Apoorv Singh</title>
-<meta name="description" content="Apoorv Singh is a product and tech builder in Bengaluru with 6+ years of experience shipping B2B software.">
+<meta name="description" content="Apoorv Singh is a product and tech builder in Bengaluru with 6+ years turning ideas into scalable platforms.">
 <style>
-/* Layout: Apple product-page rhythm. Frosted sticky nav, big centered hero, stat strip, bento highlights, stacked experience cards, quiet footer. */
+/* Layout: Stripe-style marketing page. Frosted nav, white hero with a slanted colour-gradient band and an API-response code card, stat strip, feature grid, docs-like experience list, navy contact block. */
 :root {
-  --bg: #fbfbfd;
-  --surface: #ffffff;
-  --band: #f5f5f7;
-  --fg: #1d1d1f;
-  --muted: #6e6e73;
-  --line: rgba(0,0,0,0.1);
-  --accent: #0071e3;
+  --bg: #ffffff;
+  --soft: #f6f9fc;
+  --card: #ffffff;
+  --fg: #0a2540;
+  --body: #425466;
+  --muted: #697386;
+  --line: #e3e8ee;
+  --accent: #635bff;
+  --accent-hover: #4f46e5;
+  --accent-soft: #efeeff;
   --accent-fg: #ffffff;
-  --grad-a: #0071e3;
-  --grad-b: #b04cf0;
-  --nav-bg: rgba(251,251,253,0.78);
-  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
-  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  --gutter: clamp(16px, 5vw, 40px);
+  --navy: #0a2540;
+  --navy-fg: #ffffff;
+  --nav-bg: rgba(255,255,255,0.82);
+  --shadow: 0 2px 5px rgba(60,66,87,0.08), 0 1px 1px rgba(0,0,0,0.06);
+  --shadow-lg: 0 30px 60px -12px rgba(50,50,93,0.25), 0 18px 36px -18px rgba(0,0,0,0.3);
+  --g1: #00d4ff;
+  --g2: #635bff;
+  --g3: #ff6bd6;
+  --g4: #ffb259;
+  --band-opacity: 1;
+  --font: "Sohne", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  --gutter: clamp(16px, 5vw, 32px);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #000000;
-    --surface: #1d1d1f;
-    --band: #0b0b0c;
-    --fg: #f5f5f7;
-    --muted: #a1a1a6;
-    --line: rgba(255,255,255,0.14);
-    --accent: #2997ff;
-    --accent-fg: #000000;
-    --grad-a: #2997ff;
-    --grad-b: #c77dff;
-    --nav-bg: rgba(0,0,0,0.72);
-    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
+    --bg: #0a1128;
+    --soft: #0d1633;
+    --card: #111b3d;
+    --fg: #f6f9fc;
+    --body: #b4bfd6;
+    --muted: #8b97b5;
+    --line: #1f2b52;
+    --accent: #8b85ff;
+    --accent-hover: #a7a2ff;
+    --accent-soft: #1a2150;
+    --accent-fg: #0a1128;
+    --navy: #060b1f;
+    --nav-bg: rgba(10,17,40,0.8);
+    --shadow: 0 2px 5px rgba(0,0,0,0.35), 0 1px 1px rgba(0,0,0,0.3);
+    --shadow-lg: 0 30px 60px -12px rgba(0,0,0,0.6), 0 18px 36px -18px rgba(0,0,0,0.6);
+    --band-opacity: .75;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #000000;
-  --surface: #1d1d1f;
-  --band: #0b0b0c;
-  --fg: #f5f5f7;
-  --muted: #a1a1a6;
-  --line: rgba(255,255,255,0.14);
-  --accent: #2997ff;
-  --accent-fg: #000000;
-  --grad-a: #2997ff;
-  --grad-b: #c77dff;
-  --nav-bg: rgba(0,0,0,0.72);
-  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
+  --bg: #0a1128;
+  --soft: #0d1633;
+  --card: #111b3d;
+  --fg: #f6f9fc;
+  --body: #b4bfd6;
+  --muted: #8b97b5;
+  --line: #1f2b52;
+  --accent: #8b85ff;
+  --accent-hover: #a7a2ff;
+  --accent-soft: #1a2150;
+  --accent-fg: #0a1128;
+  --navy: #060b1f;
+  --nav-bg: rgba(10,17,40,0.8);
+  --shadow: 0 2px 5px rgba(0,0,0,0.35), 0 1px 1px rgba(0,0,0,0.3);
+  --shadow-lg: 0 30px 60px -12px rgba(0,0,0,0.6), 0 18px 36px -18px rgba(0,0,0,0.6);
+  --band-opacity: .75;
   color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 64px; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--fg);
+  color: var(--body);
   font-family: var(--font);
   font-size: 17px;
-  line-height: 1.5;
-  letter-spacing: -0.011em;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  padding-inline: 0;
+  overflow-x: hidden;
 }
+h1, h2, h3, h4, p, ul, dl, dd, pre { margin: 0; padding: 0; }
+h1, h2, h3 { color: var(--fg); text-wrap: balance; }
 a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
-h1, h2, h3, p { margin: 0; }
-h1, h2, h3 { text-wrap: balance; }
-
+a:hover { color: var(--accent-hover); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 .wrap { width: 100%; max-width: 1080px; margin-inline: auto; padding-inline: var(--gutter); }
 
 /* Nav */
-.nav {
-  position: sticky; top: 0; z-index: 10;
-  background: var(--nav-bg);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--line);
-}
-.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 52px; gap: 16px; }
-.brand { color: var(--fg); font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
-.brand:hover { text-decoration: none; }
-.nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
-.nav ul a { color: var(--muted); font-size: 13px; letter-spacing: 0; }
-.nav ul a:hover { color: var(--fg); text-decoration: none; }
-.pill {
-  display: inline-flex; align-items: center; justify-content: center;
-  background: var(--accent); color: var(--accent-fg);
-  padding: 8px 18px; border-radius: 980px; font-size: 14px; font-weight: 500;
-  border: 0; cursor: pointer; letter-spacing: -0.01em;
-  transition: transform .2s ease, opacity .2s ease;
-}
-.pill:hover { text-decoration: none; opacity: .88; }
-.pill:active { transform: scale(.97); }
-.pill.small { padding: 5px 14px; font-size: 12px; }
-.pill.ghost { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.nav { position: sticky; top: 0; z-index: 20; background: var(--nav-bg); -webkit-backdrop-filter: saturate(180%) blur(14px); backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid var(--line); }
+.nav .wrap { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--fg); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
+.brand:hover { color: var(--fg); }
+.brand i { font-style: normal; width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; font-size: 13px; color: #fff; background: linear-gradient(135deg, var(--g2), var(--g3)); letter-spacing: 0; }
+.nav ul { display: flex; gap: 6px; list-style: none; }
+.nav ul a { color: var(--fg); font-size: 15px; font-weight: 500; padding: 8px 12px; border-radius: 999px; opacity: .85; }
+.nav ul a:hover { background: var(--accent-soft); color: var(--accent); opacity: 1; }
+.btn { display: inline-flex; align-items: center; gap: 8px; justify-content: center; border-radius: 999px; font-weight: 600; font-size: 16px; padding: 11px 20px; line-height: 1.2; font-family: inherit; border: 0; cursor: pointer; transition: transform .15s ease, background .15s ease, box-shadow .15s ease; }
+.btn.primary { background: var(--accent); color: var(--accent-fg); box-shadow: 0 4px 12px -2px rgba(99,91,255,0.5); }
+.btn.primary:hover { background: var(--accent-hover); color: var(--accent-fg); transform: translateY(-1px); }
+.btn.link { background: transparent; color: var(--accent); padding-inline: 8px; }
+.btn.link:hover { color: var(--accent-hover); }
+.btn.link span { transition: transform .15s ease; }
+.btn.link:hover span { transform: translateX(3px); }
+.btn.small { padding: 8px 16px; font-size: 14px; }
 
 /* Hero */
-.hero { text-align: center; padding-block: clamp(64px, 12vw, 128px) clamp(48px, 8vw, 80px); }
-.hero .wrap > * { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
-.hero .wrap > *:nth-child(2) { animation-delay: .08s; }
-.hero .wrap > *:nth-child(3) { animation-delay: .16s; }
-.hero .wrap > *:nth-child(4) { animation-delay: .24s; }
-@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-.eyebrow { font-size: 14px; font-weight: 600; color: var(--muted); letter-spacing: 0.01em; margin-bottom: 14px; }
-.hero h1 {
-  font-size: clamp(44px, 10vw, 96px);
-  line-height: 1.02;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-}
-.grad {
-  background: linear-gradient(100deg, var(--grad-a), var(--grad-b));
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
-}
-.hero .tag {
-  margin: 20px auto 0; max-width: 20ch;
-  font-size: clamp(24px, 4.4vw, 40px); line-height: 1.12; font-weight: 600; letter-spacing: -0.03em;
-}
-.hero .lede { margin: 20px auto 0; max-width: 40ch; color: var(--muted); font-size: clamp(17px, 2.2vw, 21px); line-height: 1.4; }
-.cta { margin-top: 32px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.cta .pill { padding: 12px 24px; font-size: 17px; }
+.hero { position: relative; overflow: hidden; padding-block: clamp(56px, 9vw, 112px) clamp(64px, 9vw, 120px); isolation: isolate; }
+.band { position: absolute; z-index: -1; right: -12%; top: -34%; width: 78%; height: 130%; transform: skewY(-12deg); transform-origin: top right; opacity: var(--band-opacity);
+  background: linear-gradient(135deg, var(--g1) 0%, var(--g2) 38%, var(--g3) 72%, var(--g4) 100%);
+  background-size: 160% 160%; animation: drift 14s ease-in-out infinite alternate; }
+.band::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 120px); }
+@keyframes drift { from { background-position: 0% 30%; } to { background-position: 100% 70%; } }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: clamp(32px, 6vw, 72px); align-items: center; }
+.hero-grid > * { min-width: 0; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 6px 12px; border-radius: 999px; }
+.eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.hero h1 { font-size: clamp(38px, 6.4vw, 68px); line-height: 1.04; letter-spacing: -0.035em; font-weight: 700; margin-top: 20px; }
+.hero p.lede { margin-top: 22px; font-size: clamp(18px, 2vw, 21px); line-height: 1.55; max-width: 34em; }
+.cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+
+/* Code card */
+.code { background: var(--navy); color: #cbd5ee; border-radius: 14px; box-shadow: var(--shadow-lg); overflow: hidden; transform: rotate(1.2deg); max-width: 100%; }
+.code .bar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--mono); font-size: 12.5px; color: #8fa0c5; }
+.code .bar b { color: #7ee0a6; font-weight: 600; margin-left: auto; }
+.dots { display: flex; gap: 6px; margin-right: 6px; }
+.dots span { width: 10px; height: 10px; border-radius: 50%; background: #35476b; }
+.code pre { padding: 18px 20px 22px; font-family: var(--mono); font-size: 13.5px; line-height: 1.75; overflow-x: auto; white-space: pre; }
+.k { color: #8bd5ff; } .s { color: #c3a6ff; } .n { color: #ffb259; } .p { color: #6f82a8; }
+
+/* Tools strip */
+.tools { border-block: 1px solid var(--line); background: var(--soft); }
+.tools .wrap { padding-block: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 28px; justify-content: center; }
+.tools small { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.tools span { font-weight: 600; color: var(--muted); font-size: 16px; letter-spacing: -0.01em; }
 
 /* Stats */
-.stats { padding-block: 0 clamp(56px, 9vw, 96px); }
-.stat-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  background: var(--band); border-radius: 28px; padding: 8px;
-}
-.stat { padding: 28px 20px; text-align: center; min-width: 0; }
+.stats { padding-block: clamp(48px, 7vw, 80px) 0; }
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.stat { padding: 8px 24px; min-width: 0; }
 .stat + .stat { border-left: 1px solid var(--line); }
-.stat b { display: block; font-size: clamp(34px, 5vw, 52px); font-weight: 700; letter-spacing: -0.04em; line-height: 1.05; font-variant-numeric: tabular-nums; }
-.stat span { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.35; }
+.stat b { display: block; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.04em; font-weight: 700; font-variant-numeric: tabular-nums; background: linear-gradient(120deg, var(--g2), var(--g3)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+.stat span { display: block; margin-top: 6px; font-size: 15px; line-height: 1.4; }
 
 /* Sections */
-section { padding-block: clamp(56px, 9vw, 104px); }
-.band { background: var(--band); }
-.kicker { font-size: 14px; font-weight: 600; color: var(--accent); margin-bottom: 10px; }
-.h2 { font-size: clamp(32px, 5.6vw, 56px); line-height: 1.05; font-weight: 700; letter-spacing: -0.035em; max-width: 18ch; }
-.sub { margin-top: 18px; color: var(--muted); font-size: clamp(17px, 2vw, 21px); line-height: 1.4; max-width: 52ch; }
+section { padding-block: clamp(56px, 8vw, 104px); }
+.kicker { font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.h2 { margin-top: 12px; font-size: clamp(30px, 4.6vw, 46px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700; max-width: 20ch; }
+.lead { margin-top: 16px; font-size: 19px; max-width: 52ch; }
+
+/* Feature grid */
+.grid { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.feat { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 28px; box-shadow: var(--shadow); min-width: 0; transition: transform .2s ease, box-shadow .2s ease; }
+.feat:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.feat .ico { width: 36px; height: 36px; border-radius: 10px; margin-bottom: 18px; background: linear-gradient(135deg, var(--g2), var(--g3)); position: relative; }
+.feat:nth-child(3n+2) .ico { background: linear-gradient(135deg, var(--g1), var(--g2)); }
+.feat:nth-child(3n) .ico { background: linear-gradient(135deg, var(--g3), var(--g4)); }
+.feat .ico::after { content: ""; position: absolute; inset: 9px; border-radius: 4px; background: rgba(255,255,255,0.85); }
+.feat h3 { font-size: 20px; line-height: 1.25; letter-spacing: -0.02em; font-weight: 700; }
+.feat p { margin-top: 10px; font-size: 16px; line-height: 1.55; }
+.soft { background: var(--soft); border-block: 1px solid var(--line); }
 
 /* About */
-.about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
 .about-grid > * { min-width: 0; }
-.about p + p { margin-top: 16px; }
-.about .copy { font-size: 19px; line-height: 1.5; }
-.facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
-.facts div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.about-grid p + p { margin-top: 16px; }
+.about-grid p { font-size: 18px; }
+.facts { border: 1px solid var(--line); border-radius: 14px; background: var(--card); box-shadow: var(--shadow); overflow: hidden; }
+.facts div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 20px; font-size: 15px; }
+.facts div + div { border-top: 1px solid var(--line); }
 .facts dt { color: var(--muted); }
-.facts dd { margin: 0; text-align: right; font-weight: 500; }
-.facts { margin: 0; }
-
-/* Bento */
-.bento { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.card {
-  background: var(--surface); border-radius: 28px; padding: clamp(24px, 3vw, 36px);
-  display: flex; flex-direction: column; gap: 10px; min-width: 0;
-  box-shadow: var(--shadow);
-  transition: transform .35s cubic-bezier(.2,.7,.2,1);
-}
-.card:hover { transform: translateY(-4px); }
-.card.wide { grid-column: span 2; }
-.card .label { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; text-transform: uppercase; }
-.card h3 { font-size: clamp(22px, 2.6vw, 28px); line-height: 1.12; font-weight: 700; letter-spacing: -0.03em; }
-.card p { color: var(--muted); font-size: 16px; line-height: 1.45; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 12px; }
-.chip { font-size: 13px; padding: 5px 12px; border-radius: 980px; background: var(--band); color: var(--fg); }
-.card.dark { background: #1d1d1f; color: #f5f5f7; }
-.card.dark p, .card.dark .label { color: #a1a1a6; }
-.card.dark .chip { background: rgba(255,255,255,0.1); color: #f5f5f7; }
-:root[data-theme="dark"] .card.dark, :root:not([data-theme="light"]) .card.dark { }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .card.dark { background: #2a2a2d; } }
-:root[data-theme="dark"] .card.dark { background: #2a2a2d; }
+.facts dd { margin: 0; color: var(--fg); font-weight: 600; text-align: right; }
 
 /* Experience */
-.jobs { margin-top: 48px; display: grid; gap: 16px; }
-.job {
-  background: var(--surface); border-radius: 28px; padding: clamp(24px, 4vw, 44px);
-  display: grid; grid-template-columns: 240px 1fr; gap: clamp(20px, 4vw, 56px);
-  box-shadow: var(--shadow);
-}
+.jobs { margin-top: 48px; border-top: 1px solid var(--line); }
+.job { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: clamp(20px, 4vw, 56px); padding-block: 36px; border-bottom: 1px solid var(--line); }
 .job > * { min-width: 0; }
-.job .when { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
-.job .where { font-size: 24px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-top: 6px; }
-.job .role { color: var(--fg); font-weight: 500; margin-top: 4px; font-size: 16px; }
-.job .place { color: var(--muted); font-size: 14px; margin-top: 2px; }
-.job .intro { font-size: 17px; line-height: 1.5; }
-.job ul { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
-.job li { position: relative; padding-left: 20px; color: var(--muted); font-size: 16px; line-height: 1.5; }
-.job li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
-.job li strong { color: var(--fg); font-weight: 600; }
+.job .when { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.job h3 { font-size: 24px; letter-spacing: -0.025em; line-height: 1.2; margin-top: 6px; font-weight: 700; }
+.job .role { color: var(--fg); font-weight: 600; margin-top: 4px; font-size: 16px; }
+.job .where { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.job .intro { color: var(--fg); font-size: 18px; line-height: 1.55; }
+.job ul { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.job li { position: relative; padding-left: 22px; font-size: 16px; line-height: 1.55; }
+.job li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 10px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--g2), var(--g3)); }
+.job li b { color: var(--fg); font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chip { font-family: var(--mono); font-size: 12.5px; padding: 4px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font-weight: 500; }
 
 /* Skills */
-.skill-grid { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.skill { background: var(--surface); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); min-width: 0; }
-.skill h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; }
-.skill .chips { padding-top: 0; margin-top: 0; }
+.skill-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.skill { padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); box-shadow: var(--shadow); min-width: 0; }
+.skill h3 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+.skill .chips { margin-top: 14px; }
 
-/* Learning */
-.learn { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); }
+/* Education */
+.learn { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); }
 .learn > * { min-width: 0; }
-.learn h3 { font-size: 15px; font-weight: 600; color: var(--muted); margin-bottom: 8px; letter-spacing: 0.01em; }
-.list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.learn h3 { font-size: 15px; font-weight: 700; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
+.list { list-style: none; border-top: 1px solid var(--line); }
 .list li { padding: 18px 0; border-bottom: 1px solid var(--line); }
-.list b { display: block; font-size: 18px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.3; }
-.list span { display: block; color: var(--muted); font-size: 15px; margin-top: 2px; }
+.list b { display: block; color: var(--fg); font-size: 18px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.3; }
+.list span { display: block; font-size: 15px; color: var(--muted); margin-top: 2px; }
 
 /* Contact */
-.contact { text-align: center; }
-.contact .h2 { margin-inline: auto; }
-.contact .sub { margin-inline: auto; }
-.contact-list { margin: 40px auto 0; max-width: 520px; display: grid; gap: 0; text-align: left; border-top: 1px solid var(--line); }
-.contact-list a, .contact-list div { display: flex; justify-content: space-between; gap: 16px; padding: 18px 4px; border-bottom: 1px solid var(--line); color: var(--fg); font-size: 18px; align-items: baseline; }
-.contact-list a:hover { text-decoration: none; color: var(--accent); }
-.contact-list small { color: var(--muted); font-size: 14px; flex: none; }
+.contact { background: var(--navy); color: #b4bfd6; position: relative; overflow: hidden; isolation: isolate; }
+.contact::before { content: ""; position: absolute; z-index: -1; left: -10%; bottom: -60%; width: 70%; height: 120%; transform: skewY(-12deg); opacity: .55; background: linear-gradient(135deg, var(--g1), var(--g2) 45%, var(--g3) 80%, var(--g4)); filter: blur(30px); }
+.contact .kicker { color: #a7a2ff; }
+.contact .h2 { color: #fff; max-width: 16ch; }
+.contact .lead { color: #c3cde3; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.contact-grid > * { min-width: 0; }
+.contact-list { border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; background: rgba(255,255,255,0.06); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); overflow: hidden; }
+.contact-list a, .contact-list div { display: flex; justify-content: space-between; gap: 16px; padding: 18px 22px; color: #fff; align-items: baseline; font-size: 17px; }
+.contact-list > * + * { border-top: 1px solid rgba(255,255,255,0.12); }
+.contact-list a:hover { background: rgba(255,255,255,0.07); color: #fff; }
+.contact-list small { color: #9aa8c7; font-size: 13px; flex: none; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
 .contact-list .val { min-width: 0; overflow-wrap: anywhere; text-align: right; font-weight: 500; }
+.contact .btn.primary { background: #fff; color: #0a2540; box-shadow: none; }
+.contact .btn.primary:hover { background: #efeeff; color: #0a2540; }
 
-footer { padding-block: 32px 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
-footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+footer { background: var(--navy); color: #8b97b5; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.1); }
+footer .wrap { padding-block: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+footer a { color: #b4bfd6; }
+footer a:hover { color: #fff; }
 
-@media (max-width: 880px) {
+@media (max-width: 900px) {
   .nav ul { display: none; }
-  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .hero-grid, .about-grid, .contact-grid, .learn { grid-template-columns: minmax(0, 1fr); }
+  .band { width: 130%; right: -30%; top: -10%; height: 70%; }
+  .code { transform: none; }
+  .grid, .skill-grid { grid-template-columns: minmax(0, 1fr); }
+  .stat-grid { grid-template-columns: 1fr 1fr; row-gap: 24px; }
   .stat:nth-child(3) { border-left: 0; }
-  .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
-  .about-grid, .learn { grid-template-columns: 1fr; }
-  .bento, .skill-grid { grid-template-columns: 1fr; }
-  .card.wide { grid-column: auto; }
-  .job { grid-template-columns: 1fr; gap: 20px; }
+  .job { grid-template-columns: minmax(0, 1fr); gap: 16px; }
 }
 @media (max-width: 420px) {
-  .stat { padding: 22px 12px; }
+  .stat { padding-inline: 14px; }
+  .code pre { font-size: 12.5px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero .wrap > * { animation: none; }
-  .card { transition: none; }
+  .band { animation: none; }
+  .feat, .btn { transition: none; }
 }
 </style>
 </head>
@@ -252,32 +256,55 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="brand" href="#top">Apoorv Singh</a>
+    <a class="brand" href="#top"><i>AS</i>Apoorv Singh</a>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#work">Highlights</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#learning">Education</a></li>
+      <li><a href="#education">Education</a></li>
     </ul>
-    <a class="pill small" href="#contact">Contact</a>
+    <a class="btn primary small" href="#contact">Contact me</a>
   </div>
 </nav>
 
 <main id="top">
 
   <header class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Product &amp; Tech Builder · Bengaluru, India</p>
-      <h1>Apoorv <span class="grad">Singh</span></h1>
-      <p class="tag">Turning ideas into platforms that scale.</p>
-      <p class="lede">I have spent 6+ years building software for real businesses. I decide what to build, then I build it and keep it running.</p>
-      <div class="cta">
-        <a class="pill" href="#contact">Get in touch</a>
-        <a class="pill ghost" href="#experience">See my work</a>
+    <div class="band" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Product &amp; Tech Builder · Bengaluru</span>
+        <h1>Turning ideas into platforms that scale.</h1>
+        <p class="lede">I am Apoorv Singh. I have spent 6+ years building software for real businesses. I decide what to build, then I design it, ship it and keep it running.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn link" href="#experience">See my work <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="code" aria-label="My profile shown as an API response">
+        <div class="bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>GET /profile<b>200 OK</b></div>
+<pre><span class="p">{</span>
+  <span class="k">"name"</span><span class="p">:</span> <span class="s">"Apoorv Singh"</span><span class="p">,</span>
+  <span class="k">"role"</span><span class="p">:</span> <span class="s">"Product &amp; Tech Builder"</span><span class="p">,</span>
+  <span class="k">"location"</span><span class="p">:</span> <span class="s">"Bengaluru, India"</span><span class="p">,</span>
+  <span class="k">"years_experience"</span><span class="p">:</span> <span class="n">6</span><span class="p">,</span>
+  <span class="k">"stack"</span><span class="p">:</span> <span class="p">[</span><span class="s">"Bubble"</span><span class="p">,</span> <span class="s">"Python"</span><span class="p">,</span> <span class="s">"FastAPI"</span><span class="p">],</span>
+  <span class="k">"industries"</span><span class="p">:</span> <span class="p">[</span><span class="s">"Real estate"</span><span class="p">,</span>
+                 <span class="s">"Fintech"</span><span class="p">,</span> <span class="s">"Ed-tech"</span><span class="p">],</span>
+  <span class="k">"studying"</span><span class="p">:</span> <span class="s">"MBA, Data Science"</span>
+<span class="p">}</span></pre>
       </div>
     </div>
   </header>
+
+  <div class="tools">
+    <div class="wrap">
+      <small>Works with</small>
+      <span>Bubble</span><span>FastAPI</span><span>Supabase</span><span>Render</span><span>HubSpot</span><span>Attio</span><span>Zapier</span><span>Stripe</span>
+    </div>
+  </div>
 
   <div class="stats">
     <div class="wrap">
@@ -285,17 +312,17 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <div class="stat"><b>6+</b><span>Years building products</span></div>
         <div class="stat"><b>50+</b><span>Live apps moved with zero loss</span></div>
         <div class="stat"><b>100s</b><span>Of users on a product I launched</span></div>
-        <div class="stat"><b>2</b><span>Live SaaS platforms I own today</span></div>
+        <div class="stat"><b>2</b><span>Live SaaS platforms I own</span></div>
       </div>
     </div>
   </div>
 
-  <section id="about" class="about">
+  <section id="about">
     <div class="wrap about-grid">
       <div>
         <p class="kicker">About</p>
-        <h2 class="h2">Product thinking. Engineering hands.</h2>
-        <div class="copy" style="margin-top:24px">
+        <h2 class="h2">Product thinking, engineering hands.</h2>
+        <div style="margin-top:24px">
           <p>I work across the whole path from idea to a running product. I talk to users and stakeholders, choose what to build next, design the system and ship it.</p>
           <p>My work covers real estate, finance and education software. Lately I have been building the backend too: a secure API on Python and FastAPI that my own products run on. I use Claude AI to move faster and to write clear documentation.</p>
         </div>
@@ -310,49 +337,42 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </section>
 
-  <section id="work" class="band">
+  <section id="work" class="soft">
     <div class="wrap">
       <p class="kicker">Highlights</p>
       <h2 class="h2">Things I am proud of shipping.</h2>
-      <p class="sub">A few results from the last few years, in plain terms.</p>
+      <p class="lead">A few results from the last few years, in plain terms.</p>
 
-      <div class="bento">
-        <article class="card wide dark">
-          <span class="label">Backend</span>
-          <h3>A production API, designed and built on my own.</h3>
-          <p>Sign-in, rate limits that change by customer plan, and caching to keep it fast. I took it from a blank page to live.</p>
-          <div class="chips"><span class="chip">FastAPI</span><span class="chip">Supabase</span><span class="chip">Render</span><span class="chip">REST</span></div>
+      <div class="grid">
+        <article class="feat">
+          <div class="ico" aria-hidden="true"></div>
+          <h3>A production API, built on my own</h3>
+          <p>Designed and deployed on FastAPI, Supabase and Render. It has sign-in, rate limits that change by customer plan, and caching.</p>
         </article>
-
-        <article class="card">
-          <span class="label">Ownership</span>
-          <h3>Two live SaaS products.</h3>
-          <p>I own the roadmap for Capital Stack and Developer Database, and decide what ships next from stakeholder input and usage data.</p>
+        <article class="feat">
+          <div class="ico" aria-hidden="true"></div>
+          <h3>Two live SaaS products</h3>
+          <p>I own the roadmap for Capital Stack and Developer Database, and choose what ships next from stakeholder input and usage data.</p>
         </article>
-
-        <article class="card">
-          <span class="label">Migration</span>
-          <h3>50+ apps moved. None lost.</h3>
-          <p>I led the move from Kissflow to Zoho Qntrl, and worked with the Zoho team to fix bugs in their new product along the way.</p>
+        <article class="feat">
+          <div class="ico" aria-hidden="true"></div>
+          <h3>50+ apps moved, none lost</h3>
+          <p>I led the move from Kissflow to Zoho Qntrl and worked with the Zoho team to fix bugs in their new product.</p>
         </article>
-
-        <article class="card">
-          <span class="label">Launch</span>
-          <h3>Hundreds of users, fast.</h3>
-          <p>Built Tax Finanshels, a UAE VAT tax-filing product, in under six months. Hundreds of people used it within the first few months.</p>
+        <article class="feat">
+          <div class="ico" aria-hidden="true"></div>
+          <h3>Hundreds of users, fast</h3>
+          <p>Built Tax Finanshels, a UAE VAT filing product, in under six months. Hundreds of people used it within the first few months.</p>
         </article>
-
-        <article class="card">
-          <span class="label">Security</span>
-          <h3>Safe by default.</h3>
-          <p>IP blocklisting and input cleaning protect customer data and keep the platform stable.</p>
+        <article class="feat">
+          <div class="ico" aria-hidden="true"></div>
+          <h3>Safe by default</h3>
+          <p>IP blocklisting and input cleaning protect customer data and keep the platform stable as usage grows.</p>
         </article>
-
-        <article class="card wide">
-          <span class="label">Integrations</span>
-          <h3>Fits into the tools people already use.</h3>
-          <p>Customers can sync platform data into HubSpot and Attio. Teams get real-time updates in Slack. I also built a usage dashboard that shows what people actually use, so priorities come from data.</p>
-          <div class="chips"><span class="chip">HubSpot</span><span class="chip">Attio</span><span class="chip">Slack</span><span class="chip">Xero</span><span class="chip">Stripe</span><span class="chip">Mixpanel</span></div>
+        <article class="feat">
+          <div class="ico" aria-hidden="true"></div>
+          <h3>Fits the tools people use</h3>
+          <p>Customers sync data into HubSpot and Attio. Teams get real-time Slack alerts. A usage dashboard shows what people actually use.</p>
         </article>
       </div>
     </div>
@@ -368,105 +388,111 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <article class="job">
           <div>
             <p class="when">Feb 2024 – Aug 2026</p>
-            <h3 class="where">Thesis Driven</h3>
+            <h3>Thesis Driven</h3>
             <p class="role">Bubble Developer</p>
-            <p class="place">United States · Remote</p>
+            <p class="where">United States</p>
           </div>
           <div>
             <p class="intro">I joined to own two SaaS platforms for real estate investment data. The role grew into building the backend behind them, from deciding what customers need to shipping a secure API.</p>
             <ul>
-              <li><strong>Roadmap.</strong> Owned what gets built next for Capital Stack and Developer Database, using stakeholder input and usage data.</li>
-              <li><strong>API.</strong> Designed, built and deployed a production REST API on FastAPI, Supabase and Render, with sign-in, tiered rate limits and caching.</li>
-              <li><strong>Security.</strong> Added IP blocklisting and input sanitization to protect customer data.</li>
-              <li><strong>Analytics.</strong> Built an internal usage dashboard to track adoption and guide priorities.</li>
-              <li><strong>Integrations.</strong> Connected HubSpot and Attio, and built Slack alerts for real-time updates.</li>
-              <li><strong>AI.</strong> Used Claude AI to speed up development and documentation.</li>
+              <li><b>Roadmap.</b> Owned what gets built next for Capital Stack and Developer Database.</li>
+              <li><b>API.</b> Designed, built and deployed a production REST API with sign-in, tiered rate limits and caching.</li>
+              <li><b>Security.</b> Added IP blocklisting and input sanitization to protect customer data.</li>
+              <li><b>Analytics.</b> Built an internal usage dashboard to track adoption and guide priorities.</li>
+              <li><b>Integrations.</b> Connected HubSpot and Attio, and built Slack alerts for real-time updates.</li>
+              <li><b>AI.</b> Used Claude AI to speed up development and documentation.</li>
             </ul>
+            <div class="chips"><span class="chip">FastAPI</span><span class="chip">Supabase</span><span class="chip">Render</span><span class="chip">HubSpot</span><span class="chip">Attio</span><span class="chip">Slack</span></div>
           </div>
         </article>
 
         <article class="job">
           <div>
             <p class="when">Aug 2023 – Feb 2024</p>
-            <h3 class="where">Finanshels</h3>
+            <h3>Finanshels</h3>
             <p class="role">Bubble Developer</p>
-            <p class="place">Bengaluru, India</p>
+            <p class="where">Bengaluru, India</p>
           </div>
           <div>
             <p class="intro">I built a tax-filing product for UAE clients from scratch and shipped it in under six months. It was my first time taking a regulated financial product from idea to launch.</p>
             <ul>
-              <li><strong>Tax Finanshels.</strong> A UAE VAT filing product used by hundreds of people within months of release.</li>
-              <li><strong>Dashboard.</strong> A Xero-connected view of income, expenses, profit, receivables and invoices, with multi-company switching and a built-in team chatbot.</li>
-              <li><strong>Payments and email.</strong> Connected Stripe, Brevo and Calendly, and used Mixpanel to find and reduce drop-off.</li>
-              <li><strong>Automation.</strong> Automated client messages with Wati and REST APIs, cutting manual outreach for the operations team.</li>
-              <li><strong>Compliance.</strong> Worked with UAE tax experts to turn VAT rules into product features.</li>
+              <li><b>Tax Finanshels.</b> A UAE VAT filing product used by hundreds of people within months of release.</li>
+              <li><b>Dashboard.</b> A Xero-connected view of income, expenses, profit, receivables and invoices, with multi-company switching and a built-in team chatbot.</li>
+              <li><b>Payments and email.</b> Connected Stripe, Brevo and Calendly, and used Mixpanel to find and reduce drop-off.</li>
+              <li><b>Automation.</b> Automated client messages with Wati and REST APIs, cutting manual outreach.</li>
+              <li><b>Compliance.</b> Worked with UAE tax experts to turn VAT rules into product features.</li>
             </ul>
+            <div class="chips"><span class="chip">Bubble</span><span class="chip">Xero</span><span class="chip">Stripe</span><span class="chip">Brevo</span><span class="chip">Calendly</span><span class="chip">Mixpanel</span><span class="chip">Wati</span></div>
           </div>
         </article>
 
         <article class="job">
           <div>
             <p class="when">Oct 2022 – Aug 2023</p>
-            <h3 class="where">Expertrons</h3>
+            <h3>Expertrons</h3>
             <p class="role">Bubble Developer</p>
-            <p class="place">Mumbai, India</p>
+            <p class="where">Mumbai, India</p>
           </div>
           <div>
             <p class="intro">I built internal tools for a fast-growing ed-tech company. I turned messy manual processes into clean platforms that dozens of sales reps and channel partners used every day.</p>
             <ul>
-              <li><strong>CRM and orders.</strong> Built full CRM and order management systems on Bubble.io for recruitment and sales.</li>
-              <li><strong>Dashboards.</strong> Real-time sales dashboards with role-based views for reps and team leads.</li>
-              <li><strong>Partners.</strong> Invoice handling and commission tracking for dozens of channel partners, with automated reports.</li>
-              <li><strong>Automation.</strong> Used REST APIs and MongoDB to remove large amounts of manual data entry.</li>
+              <li><b>CRM and orders.</b> Built full CRM and order management systems for recruitment and sales.</li>
+              <li><b>Dashboards.</b> Real-time sales dashboards with role-based views for reps and team leads.</li>
+              <li><b>Partners.</b> Invoice handling and commission tracking for dozens of channel partners, with automated reports.</li>
+              <li><b>Automation.</b> Removed large amounts of manual data entry with REST APIs and MongoDB.</li>
             </ul>
+            <div class="chips"><span class="chip">Bubble.io</span><span class="chip">REST APIs</span><span class="chip">MongoDB</span></div>
           </div>
         </article>
 
         <article class="job">
           <div>
             <p class="when">Oct 2020 – Aug 2022</p>
-            <h3 class="where">MyOperator</h3>
+            <h3>MyOperator</h3>
             <p class="role">Automation Engineer</p>
-            <p class="place">India</p>
+            <p class="where">India</p>
           </div>
           <div>
-            <p class="intro">This role shaped how I think about automation at scale. The big project was moving 50+ live workflow apps to a brand new platform without losing a single one.</p>
+            <p class="intro">This role shaped how I think about automation at scale. The big project was moving 50+ live workflow apps to a new platform without losing a single one.</p>
             <ul>
-              <li><strong>Migration.</strong> Led the move of 50+ apps from Kissflow to Zoho Qntrl with zero loss, and worked with the Zoho team to fix new-product bugs.</li>
-              <li><strong>KPI dashboards.</strong> Built live views of agent activity, pipeline and operations for senior leaders and sales teams.</li>
-              <li><strong>Workflows.</strong> Linked Google Workspace, Zoho CRM and other APIs through Zapier, saving many hours each month.</li>
-              <li><strong>Internal tools.</strong> Built a sales panel on Bubble.io with Google Sign-In.</li>
-              <li><strong>Custom code.</strong> Wrote JavaScript inside Zoho Qntrl for processes it could not handle on its own.</li>
+              <li><b>Migration.</b> Led the move from Kissflow to Zoho Qntrl with zero loss, and worked with the Zoho team to fix new-product bugs.</li>
+              <li><b>KPI dashboards.</b> Live views of agent activity, pipeline and operations for senior leaders and sales teams.</li>
+              <li><b>Workflows.</b> Linked Google Workspace, Zoho CRM and other APIs through Zapier, saving many hours each month.</li>
+              <li><b>Internal tools.</b> Built a sales panel on Bubble.io with Google Sign-In.</li>
+              <li><b>Custom code.</b> Wrote JavaScript inside Zoho Qntrl for processes it could not handle on its own.</li>
             </ul>
+            <div class="chips"><span class="chip">Zoho Qntrl</span><span class="chip">Zoho CRM</span><span class="chip">Zapier</span><span class="chip">Bubble.io</span><span class="chip">JavaScript</span></div>
           </div>
         </article>
 
         <article class="job">
           <div>
             <p class="when">Jan 2020 – Oct 2020</p>
-            <h3 class="where">Nethues Technologies</h3>
+            <h3>Nethues Technologies</h3>
             <p class="role">Software Developer Trainee</p>
-            <p class="place">India</p>
+            <p class="where">India</p>
           </div>
           <div>
-            <p class="intro">My first job. I learned what it takes to ship real software for real clients on a deadline, and picked up the team habits I still use.</p>
+            <p class="intro">My first job. I learned what it takes to ship real software for real clients on a deadline, and picked up team habits I still use.</p>
             <ul>
-              <li><strong>Web apps.</strong> Built responsive sites for retail and service clients with HTML, CSS, Bootstrap, PHP and MySQL.</li>
-              <li><strong>E-commerce.</strong> Helped senior developers on Magento 2 and CMS projects across design, build and testing.</li>
-              <li><strong>Speed.</strong> Tuned database queries and server code to make pages load faster.</li>
-              <li><strong>Agile.</strong> Worked in daily standups, sprint planning and retrospectives.</li>
+              <li><b>Web apps.</b> Built responsive websites for retail and service clients.</li>
+              <li><b>E-commerce.</b> Helped senior developers on Magento 2 and CMS projects across design, build and testing.</li>
+              <li><b>Speed.</b> Tuned database queries and server code to make pages load faster.</li>
+              <li><b>Agile.</b> Worked in daily standups, sprint planning and retrospectives.</li>
             </ul>
+            <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">Bootstrap</span><span class="chip">Magento 2</span></div>
           </div>
         </article>
 
         <article class="job">
           <div>
             <p class="when">Jan 2019 – Jun 2019</p>
-            <h3 class="where">Maxgen Technologies</h3>
+            <h3>Maxgen Technologies</h3>
             <p class="role">Intern, Junior Java Developer</p>
           </div>
           <div>
             <p class="intro">Where it started: a six-month internship writing Java.</p>
+            <div class="chips"><span class="chip">Java</span></div>
           </div>
         </article>
 
@@ -474,41 +500,23 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </section>
 
-  <section id="skills" class="band">
+  <section id="skills" class="soft">
     <div class="wrap">
       <p class="kicker">Skills</p>
       <h2 class="h2">The tools I reach for.</h2>
 
       <div class="skill-grid">
-        <div class="skill">
-          <h3>Build</h3>
-          <div class="chips"><span class="chip">Bubble.io</span><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">REST APIs</span><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">Java</span><span class="chip">HTML &amp; CSS</span></div>
-        </div>
-        <div class="skill">
-          <h3>Data and hosting</h3>
-          <div class="chips"><span class="chip">Supabase</span><span class="chip">MongoDB</span><span class="chip">MySQL</span><span class="chip">Render</span><span class="chip">Mixpanel</span></div>
-        </div>
-        <div class="skill">
-          <h3>Automate and connect</h3>
-          <div class="chips"><span class="chip">Zapier</span><span class="chip">Zoho CRM</span><span class="chip">Zoho Qntrl</span><span class="chip">HubSpot</span><span class="chip">Attio</span><span class="chip">Clay</span><span class="chip">Slack</span><span class="chip">Wati</span></div>
-        </div>
-        <div class="skill">
-          <h3>Payments and comms</h3>
-          <div class="chips"><span class="chip">Stripe</span><span class="chip">Brevo</span><span class="chip">Calendly</span><span class="chip">Xero</span></div>
-        </div>
-        <div class="skill">
-          <h3>AI</h3>
-          <div class="chips"><span class="chip">Anthropic Claude</span><span class="chip">Generative AI</span><span class="chip">RPA</span></div>
-        </div>
-        <div class="skill">
-          <h3>Product</h3>
-          <div class="chips"><span class="chip">Roadmaps</span><span class="chip">Usage analytics</span><span class="chip">Stakeholder work</span><span class="chip">Agile</span></div>
-        </div>
+        <div class="skill"><h3>Build</h3><div class="chips"><span class="chip">Bubble.io</span><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">REST APIs</span><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">Java</span><span class="chip">HTML &amp; CSS</span></div></div>
+        <div class="skill"><h3>Data and hosting</h3><div class="chips"><span class="chip">Supabase</span><span class="chip">MongoDB</span><span class="chip">MySQL</span><span class="chip">Render</span><span class="chip">Mixpanel</span></div></div>
+        <div class="skill"><h3>Automate and connect</h3><div class="chips"><span class="chip">Zapier</span><span class="chip">Zoho CRM</span><span class="chip">Zoho Qntrl</span><span class="chip">HubSpot</span><span class="chip">Attio</span><span class="chip">Clay</span><span class="chip">Slack</span><span class="chip">Wati</span></div></div>
+        <div class="skill"><h3>Payments and comms</h3><div class="chips"><span class="chip">Stripe</span><span class="chip">Brevo</span><span class="chip">Calendly</span><span class="chip">Xero</span></div></div>
+        <div class="skill"><h3>AI</h3><div class="chips"><span class="chip">Anthropic Claude</span><span class="chip">Generative AI</span><span class="chip">RPA</span></div></div>
+        <div class="skill"><h3>Product</h3><div class="chips"><span class="chip">Roadmaps</span><span class="chip">Usage analytics</span><span class="chip">Stakeholder work</span><span class="chip">Agile</span></div></div>
       </div>
     </div>
   </section>
 
-  <section id="learning">
+  <section id="education">
     <div class="wrap">
       <p class="kicker">Education</p>
       <h2 class="h2">Always learning.</h2>
@@ -535,12 +543,14 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </section>
 
-  <section id="contact" class="contact band">
-    <div class="wrap">
-      <p class="kicker">Contact</p>
-      <h2 class="h2">Let us build something.</h2>
-      <p class="sub">I am happy to talk about products, platforms and automation. Write or call any time.</p>
-
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="kicker">Contact</p>
+        <h2 class="h2">Let us build something.</h2>
+        <p class="lead">I am happy to talk about products, platforms and automation. Write or call any time.</p>
+        <div style="margin-top:28px"><a class="btn primary" href="mailto:apoorvsingh30@gmail.com">Send an email</a></div>
+      </div>
       <div class="contact-list">
         <a href="mailto:apoorvsingh30@gmail.com"><small>Email</small><span class="val">apoorvsingh30@gmail.com</span></a>
         <a href="tel:+918400137532"><small>Mobile</small><span class="val">8400137532</span></a>
